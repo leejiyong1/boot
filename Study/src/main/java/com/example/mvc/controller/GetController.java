@@ -1,8 +1,10 @@
-package com.example.mvc;
+package com.example.mvc.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.example.mvc.vo.network.Header;
 
 
 @RestController
@@ -18,5 +20,12 @@ public class GetController {
 //		
 //		return searchParam;
 //	}
+	
+	@GetMapping("/header")
+	public Header getHeader() {
+		
+		//{resultCode: "OK" , "description" : "OK"}
+		return Header.builder().resultCode("OK").description("OK").build();
+	}
 
 }
